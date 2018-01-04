@@ -8,10 +8,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <ImageView
             android:id="@+id/logo"
@@ -39,12 +40,12 @@
             android:background="#448AFF" />
 
         <TextView
-            android:id="@+id/txt_id"
+            android:id="@+id/txt_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="ID"/>
+            android:text="NAMA"/>
 
         <TextView
             android:id="@+id/txt_username"
@@ -54,15 +55,43 @@
             android:layout_margin="10dp"
             android:text="Username"/>
 
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="#00555555"
-            android:text="Logout"
-            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="#00555555"
+                android:text="Profil"
+                android:onClick="clikprofil"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="#00555555"
+                android:text="Logout"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="#00555555"
+                android:text="Info"
+                android:onClick="clikInfo"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -28,7 +30,8 @@ public class Register extends AppCompatActivity {
 
     ProgressDialog pDialog;
     Button btn_register, btn_login;
-    EditText txt_username, txt_password, txt_confirm_password, txt_nama, txt_tmpt_lahir, txt_tgl_lahir, txt_jk, txt_alamat, txt_no_hp, txt_email, txt_riwayat_organisasi, txt_status_kuliah, txt_thn_lulus;
+    EditText txt_username, txt_password, txt_confirm_password, txt_nama, txt_tmpt_lahir, txt_tgl_lahir, txt_alamat, txt_no_hp, txt_email, txt_riwayat_organisasi;
+    RadioGroup rg_jk;
     Intent intent;
 
     int success;
@@ -65,13 +68,11 @@ public class Register extends AppCompatActivity {
         txt_nama = (EditText) findViewById(R.id.txt_nama);
         txt_tmpt_lahir = (EditText) findViewById(R.id.txt_tmpt_lahir);
         txt_tgl_lahir = (EditText) findViewById(R.id.txt_tgl_lahir);
-        txt_jk = (EditText) findViewById(R.id.txt_jk);
+        rg_jk = (RadioGroup) findViewById(R.id.rg_jk);
         txt_alamat = (EditText) findViewById(R.id.txt_alamat);
         txt_no_hp = (EditText) findViewById(R.id.txt_no_hp);
         txt_email = (EditText) findViewById(R.id.txt_email);
         txt_riwayat_organisasi = (EditText) findViewById(R.id.txt_riwayat_organisasi);
-        txt_status_kuliah = (EditText) findViewById(R.id.txt_status_kuliah);
-        txt_thn_lulus = (EditText) findViewById(R.id.txt_thn_lulus);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
 
@@ -95,18 +96,18 @@ public class Register extends AppCompatActivity {
                 String nama = txt_nama.getText().toString();
                 String tmpt_lahir = txt_tmpt_lahir.getText().toString();
                 String tgl_lahir = txt_tgl_lahir.getText().toString();
-                String jk = txt_jk.getText().toString();
+                int jk = rg_jk.getCheckedRadioButtonId();
+                RadioButton valuejk = (RadioButton) findViewById(jk);
+                String jenisKelamin = valuejk.getText().toString();
                 String alamat = txt_alamat.getText().toString();
                 String no_hp = txt_no_hp.getText().toString();
                 String email = txt_email.getText().toString();
                 String riwayat_organisasi = txt_riwayat_organisasi.getText().toString();
-                String status_kuliah = txt_status_kuliah.getText().toString();
-                String thn_lulus = txt_thn_lulus.getText().toString();
 
                 if (conMgr.getActiveNetworkInfo() != null
                         && conMgr.getActiveNetworkInfo().isAvailable()
                         && conMgr.getActiveNetworkInfo().isConnected()) {
-                    checkRegister(username, password, confirm_password, nama, tmpt_lahir, tgl_lahir, jk, alamat, no_hp, email, riwayat_organisasi, status_kuliah, thn_lulus);
+                    checkRegister(username, password, confirm_password, nama, tmpt_lahir, tgl_lahir, jenisKelamin, alamat, no_hp, email, riwayat_organisasi);
                 } else {
                     Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
@@ -115,7 +116,7 @@ public class Register extends AppCompatActivity {
 
     }
 
-    private void checkRegister(final String username, final String password, final String confirm_password, final String nama, final String tmpt_lahir, final String tgl_lahir, final String jk, final String alamat, final String no_hp, final String email, final String riwayat_organisasi, final String status_kuliah, final String thn_lulus) {
+    private void checkRegister(final String username, final String password, final String confirm_password, final String nama, final String tmpt_lahir, final String tgl_lahir, final String jk, final String alamat, final String no_hp, final String email, final String riwayat_organisasi) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         pDialog.setMessage("Register ...");
@@ -146,13 +147,11 @@ public class Register extends AppCompatActivity {
                         txt_nama.setText("");
                         txt_tmpt_lahir.setText("");
                         txt_tgl_lahir.setText("");
-                        txt_jk.setText("");
+
                         txt_alamat.setText("");
                         txt_no_hp.setText("");
                         txt_email.setText("");
                         txt_riwayat_organisasi.setText("");
-                        txt_status_kuliah.setText("");
-                        txt_thn_lulus.setText("");
 
                     } else {
                         Toast.makeText(getApplicationContext(),
@@ -193,8 +192,6 @@ public class Register extends AppCompatActivity {
                 params.put("no_hp", no_hp);
                 params.put("email", email);
                 params.put("riwayat_organisasi", riwayat_organisasi);
-                params.put("status_kuliah", status_kuliah);
-                params.put("thn_lulus", thn_lulus);
 
                 return params;
             }

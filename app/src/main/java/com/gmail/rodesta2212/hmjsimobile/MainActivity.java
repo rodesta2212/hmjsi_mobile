@@ -12,11 +12,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btn_logout;
-    TextView txt_id, txt_username;
-    String id, username;
+    TextView txt_nama, txt_username;
+    String nama, username;
     SharedPreferences sharedpreferences;
 
-    public static final String TAG_ID = "id";
+    public static final String TAG_nama = "nama";
     public static final String TAG_USERNAME = "username";
 
     @Override
@@ -24,16 +24,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt_id = (TextView) findViewById(R.id.txt_id);
+        txt_nama = (TextView) findViewById(R.id.txt_nama);
         txt_username = (TextView) findViewById(R.id.txt_username);
         btn_logout = (Button) findViewById(R.id.btn_logout);
 
         sharedpreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
 
-        id = getIntent().getStringExtra(TAG_ID);
+        nama = getIntent().getStringExtra(TAG_nama);
         username = getIntent().getStringExtra(TAG_USERNAME);
 
-        txt_id.setText("ID : " + id);
+        txt_nama.setText("NAMA : " + nama);
         txt_username.setText("USERNAME : " + username);
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                // update login session ke FALSE dan mengosongkan nilai id dan username
+                // update login session ke FALSE dan mengosongkan nilai nama dan username
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putBoolean(Login.session_status, false);
-                editor.putString(TAG_ID, null);
+                editor.putString(TAG_nama, null);
                 editor.putString(TAG_USERNAME, null);
                 editor.commit();
 
@@ -54,5 +54,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void clikprofil(View view){
+        Intent intent = new Intent(MainActivity.this, Profil.class);
+        startActivity(intent);
+    }
+    public void clikInfo(View view){
+        Intent intent = new Intent(MainActivity.this, Info.class);
+        startActivity(intent);
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HMJSI Mobile</string>
+    <string name="desc_uppercase">HMJSI MOBILE</string>
+    <string name="desc_lowercase">HMJSI Mobile</string>
+    <string name="detail_info">Detail Anggota</string>
+    <string name="lihat_detail">Lihat Detail</string>
 </resources>

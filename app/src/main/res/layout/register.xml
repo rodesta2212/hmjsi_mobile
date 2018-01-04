@@ -85,7 +85,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:hint="Nama"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:singleLine="true" />
 
             <EditText
@@ -95,7 +95,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:hint="Tempat Lahir"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:singleLine="true" />
 
             <EditText
@@ -105,18 +105,28 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:hint="Tanggal"
-                android:inputType="textEmailAddress"
+                android:inputType="date"
                 android:singleLine="true" />
 
-            <EditText
-                android:id="@+id/txt_jk"
+            <RadioGroup
+                android:id="@+id/rg_jk"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:hint="Jenis Kelamin"
-                android:inputType="textEmailAddress"
-                android:singleLine="true" />
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rb_jk_laki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Laki-Laki" />
+
+                <RadioButton
+                    android:id="@+id/rb_jk_perempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Perempuan" />
+            </RadioGroup>
 
             <EditText
                 android:id="@+id/txt_alamat"
@@ -125,7 +135,17 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:hint="Alamat"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/txt_no_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:hint="No HP"
+                android:inputType="phone"
                 android:singleLine="true" />
 
             <EditText
@@ -134,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:hint="No HP"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:singleLine="true" />
 
@@ -145,27 +165,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:hint="Riwayat Organisasi"
-                android:inputType="textEmailAddress"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/txt_status_kuliah"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:hint="Status Kuliah"
-                android:inputType="textEmailAddress"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/txt_thn_lulus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:hint="Tahun Lulus"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:singleLine="true" />
 
             <Button
