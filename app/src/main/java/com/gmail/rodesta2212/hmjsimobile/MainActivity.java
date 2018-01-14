@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         nama = getIntent().getStringExtra(TAG_nama);
         username = getIntent().getStringExtra(TAG_USERNAME);
 
-        txt_nama.setText("NAMA : " + nama);
-        txt_username.setText("USERNAME : " + username);
+        txt_nama.setText(": " + nama);
+        txt_username.setText(": " + username);
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void clikprofil(View view){
+    public void clikProfil(View view){
         Intent intent = new Intent(MainActivity.this, Profil.class);
         startActivity(intent);
     }

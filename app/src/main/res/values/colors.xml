@@ -13,4 +13,8 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
     <color name="light_green">#2df500</color>
+    <color name="hmjsi">#000000</color>
+    <color name="garis">#0059ff</color>
+    <color name="profil">#002780</color>
+    <color name="info">#0033bf</color>
 </resources>

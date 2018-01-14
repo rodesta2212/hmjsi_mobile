@@ -43,9 +43,9 @@
                 android:layout_below="@id/username"
                 android:padding="5dp"
                 android:text="@string/desc_lowercase"
+                android:textAlignment="center"
                 android:textColor="@color/dark"
                 android:textSize="12dp"
-                android:textAlignment="center"
                 android:textStyle="normal"
                 android:typeface="sans" />
         </RelativeLayout>

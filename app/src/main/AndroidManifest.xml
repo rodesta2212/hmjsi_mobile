@@ -19,9 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Register" />
-        <activity android:name=".Info"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="Beranda"/>
+        <activity
+            android:name=".Register"
+            android:label="Register"/>
+
+        <activity
+            android:name=".Info"
+            android:label="Info"/>
+        <activity
+            android:name=".Profil"
+            android:label="Profil"/>
+        <activity
+            android:name=".DetailAnggota"
+            android:label="Detail Anggota"/>
     </application>
 
 </manifest>
