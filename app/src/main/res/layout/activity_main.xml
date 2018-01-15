@@ -111,16 +111,6 @@
             android:background="@color/garis" />
 
         <Button
-            android:id="@+id/btn_profil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
-            android:background="@color/profil"
-            android:textColor="#fff"
-            android:text="Profil"
-            android:onClick="clikProfil" />
-
-        <Button
             android:id="@+id/btn_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -55,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void clikProfil(View view){
-        Intent intent = new Intent(MainActivity.this, Profil.class);
-        startActivity(intent);
-    }
+
     public void clikInfo(View view){
         Intent intent = new Intent(MainActivity.this, Info.class);
         startActivity(intent);

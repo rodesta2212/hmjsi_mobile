@@ -29,9 +29,7 @@
         <activity
             android:name=".Info"
             android:label="Info"/>
-        <activity
-            android:name=".Profil"
-            android:label="Profil"/>
+
         <activity
             android:name=".DetailAnggota"
             android:label="Detail Anggota"/>
